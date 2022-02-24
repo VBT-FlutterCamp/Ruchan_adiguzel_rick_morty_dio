@@ -12,15 +12,27 @@ class RickmortiesView extends RickmortiesViewModel {
         },
         child: Icon(Icons.add),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Rick and Morty"),
+        centerTitle: true,
+      ),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(models[index].image ??
-                  "https://rickandmortyapi.com/api/character/avatar/1.jpeg"),
+          return Card(
+            color: Colors.amber,
+            elevation: 3,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(models[index].image ??
+                    "https://rickandmortyapi.com/api/character/avatar/1.jpeg"),
+              ),
+              title: Text(models[index].name ?? ""),
+              subtitle:
+                  Text("Episode: ${models[index].episode ?? "Null value"}"),
+              trailing: Text(models[index].gender ?? "Null"),
             ),
-            title: Text(models[index].name ?? ""),
           );
         },
         itemCount: models.length,
