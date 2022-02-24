@@ -31,7 +31,6 @@ class RickmortiesView extends RickmortiesViewModel {
               title: Text(models[index].name ?? ""),
               subtitle:
                   Text("Episode: ${models[index].episode ?? "Null value"}"),
-              trailing: Text(models[index].gender ?? "Null"),
             ),
           );
         },
