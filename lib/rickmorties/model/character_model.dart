@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
 import '../../core/model/base_model.dart';
 
 part "character_model.g.dart";
@@ -40,7 +39,6 @@ class CharacterModel {
 
 @JsonSerializable()
 class BaseResponseCharacter extends BaseResponseModel {
-  // TODO: implement results
   List<CharacterModel>? results;
   BaseResponseCharacter({this.results});
 

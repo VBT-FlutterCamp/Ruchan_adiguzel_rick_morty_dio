@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
 import 'rickmorties_viewmodel.dart';
 
 class RickmortiesView extends RickmortiesViewModel {
+  final String nullImage =
+      "https://rickandmortyapi.com/api/character/avatar/1.jpeg";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,23 +11,22 @@ class RickmortiesView extends RickmortiesViewModel {
         onPressed: () {
           fetchAllData();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text("Rick and Morty"),
+        title: const Text("Rick and Morty"),
         centerTitle: true,
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
           return Card(
-            color: Colors.amber,
-            elevation: 3,
+            color: Colors.cyan,
+            elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: ListTile(
               leading: CircleAvatar(
-                backgroundImage: NetworkImage(models[index].image ??
-                    "https://rickandmortyapi.com/api/character/avatar/1.jpeg"),
+                backgroundImage: NetworkImage(models[index].image ?? nullImage),
               ),
               title: Text(models[index].name ?? ""),
               subtitle:

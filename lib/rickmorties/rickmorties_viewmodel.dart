@@ -2,15 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../core/network/project_network_manager.dart';
 import 'rickmorties.dart';
-import 'package:stacked/stacked.dart';
-
 import 'model/character_model.dart';
 
 class RickmortiesViewModel extends State<RickMorties> {
   final Dio dio = ProjectNetworkManager.instance.dio;
   List<CharacterModel> models = [];
+
   Future<void> fetchAllData() async {
     final response = await dio.get(ServicePath.EPISODE.rawValue);
+
     if (response.statusCode == 200) {
       final data = response.data;
       if (data is Map<String, dynamic>) {
