@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:rick_morty_dio/core/model/base_model.dart';
+import '../model/base_model.dart';
 
 class ProjectNetworkManager {
   final _baseUrl = "https://rickandmortyapi.com/api";

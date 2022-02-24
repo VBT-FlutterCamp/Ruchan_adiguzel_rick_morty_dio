@@ -40,7 +40,6 @@ class CharacterModel {
 
 @JsonSerializable()
 class BaseResponseCharacter extends BaseResponseModel {
-  @override
   // TODO: implement results
   List<CharacterModel>? results;
   BaseResponseCharacter({this.results});

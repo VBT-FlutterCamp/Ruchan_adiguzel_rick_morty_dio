@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_dio/rickmorties/rickmorties.dart';
+import 'rickmorties/rickmorties.dart';
 
 void main() => runApp(const MyApp());
 
